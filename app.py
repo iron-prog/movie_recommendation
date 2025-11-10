@@ -1,7 +1,6 @@
 import pickle
 import streamlit as st
 import requests
-import pickle, gdown, os
 
 file_id = "1Pgp0-bt5NJkj3LzkqOU2QkoOPagujymK"
 url = f"https://drive.google.com/uc?id={file_id}"
