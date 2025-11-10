@@ -4,10 +4,22 @@ import requests
 import pickle, gdown, os
 
 file_id = "1Pgp0-bt5NJkj3LzkqOU2QkoOPagujymK"
-url = f"https://drive.google.com/uc?id={file_id}"
+URL = f"https://drive.google.com/uc?export=download&id={file_id}"
 
 if not os.path.exists("similarity.pkl"):
-    gdown.download(url, "similarity.pkl", quiet=False)
+    with st.spinner("Downloading similarity.pkl from Google Drive..."):
+        session = requests.Session()
+        response = session.get(URL, stream=True)
+        # Handle confirmation token for large files
+        for key, value in response.cookies.items():
+            if key.startswith("download_warning"):
+                response = session.get(URL, params={'id': file_id, 'confirm': value}, stream=True)
+                break
+        with open("similarity.pkl", "wb") as f:
+            for chunk in response.iter_content(32768):
+                if chunk:
+                    f.write(chunk)
+
 
 
 
