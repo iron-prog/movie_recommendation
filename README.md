@@ -27,4 +27,27 @@ Given a movie selected by the user, the app suggests similar movies and shows th
 ---
 
 ## 📁 Project Structure
+movie_recommendation/
+│
+├── app.py                      # Main Streamlit application
+├── model/
+│   ├── movie_dict.pkl          # Pickle file of movies dictionary
+│   ├── similarity.pkl          # Pickle file storing cosine similarity matrix
+│
+├── data/
+│   ├── tmdb_5000_movies.csv    # Movie metadata
+│   ├── tmdb_5000_credits.csv   # Cast and crew data
+│
+├── notebooks/
+│   ├── EDA_and_Model.ipynb     # Jupyter notebook for data cleaning & model creation
+│
+├── utils/
+│   ├── fetch_poster.py         # Helper functions for TMDB API poster fetching
+│   ├── recommender.py          # Core recommend() function logic
+│
+├── requirements.txt            # Required libraries
+├── README.md                   # Project documentation
+└── images/
+    ├── demo.png                # Screenshot of the web app
+
 
