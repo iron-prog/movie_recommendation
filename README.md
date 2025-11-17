@@ -1,53 +1,112 @@
-# Movie Recommendation 🎬
+🎬 Hybrid Movie Recommender System
 
-A simple movie recommendation web app built with Python and Flask.  
-Given a movie selected by the user, the app suggests similar movies and shows their posters.
+A Streamlit web app that provides hybrid movie recommendations, blending Content-Based Filtering (what the movie is about) with Collaborative Filtering (what users think).
 
----
+🛑 ACTION REQUIRED 🛑
 
-## 🚀 Features
+<img width="1440" height="900" alt="Screenshot 2025-11-17 at 4 38 42 PM" src="https://github.com/user-attachments/assets/3bec9c2c-891e-4002-a9f2-aa1d6152435c" />
 
-- Select a movie from a drop-down list and get a list of recommended movies.  
-- Displays movie posters alongside titles for each recommendation.  
-- Works offline (uses a pre-processed pickle file of movies and similarity matrix).  
-- Easy to deploy (Heroku / local) using `app.py`.
+<img width="1440" height="900" alt="Screenshot 2025-11-17 at 4 39 26 PM" src="https://github.com/user-attachments/assets/b1ae4953-6aaf-41bf-83f4-d23a8372f855" />
 
----
 
-## 🧰 Technology Stack
+Add your Live Demo link!
 
-- Python 3.x  
-- Flask (for the web interface)  
-- pandas / numpy (for data handling)  
-- pickle (to store processed movie data)  
-- A pre-computed similarity matrix (Cosine similarity or other)  
-- `requirements.txt` lists all dependencies  
-- `setup.sh` & `Procfile` included for easy deployment
+``
 
----
+▶️ View Live Demo
 
-## 📁 Project Structure
-movie_recommendation/
-│
-├── app.py                      # Main Streamlit application
-├── model/
-│   ├── movie_dict.pkl          # Pickle file of movies dictionary
-│   ├── similarity.pkl          # Pickle file storing cosine similarity matrix
-│
-├── data/
-│   ├── tmdb_5000_movies.csv    # Movie metadata
-│   ├── tmdb_5000_credits.csv   # Cast and crew data
-│
-├── notebooks/
-│   ├── EDA_and_Model.ipynb     # Jupyter notebook for data cleaning & model creation
-│
-├── utils/
-│   ├── fetch_poster.py         # Helper functions for TMDB API poster fetching
-│   ├── recommender.py          # Core recommend() function logic
-│
-├── requirements.txt            # Required libraries
-├── README.md                   # Project documentation
-└── images/
-    ├── demo.png                # Screenshot of the web app
+(Replace the link above with your app's public URL from Streamlit Cloud)
 
+🌟 Core Features
+
+Hybrid Recommendation Engine: Combines two different recommendation strategies for more robust and personalized results.
+
+Content-Based Filtering: Uses a pre-computed similarity.pkl (Cosine Similarity) to find movies with similar metadata (genres, keywords, cast, etc.).
+
+Collaborative Filtering: Employs a trained SVD (Singular Value Decomposition) model (svd_model.pkl) to predict a user's rating for a movie, based on historical ratings from the MovieLens dataset.
+
+Interactive UI: Built with Streamlit, the app features an interactive slider to adjust the weight (alpha) between the two recommendation styles.
+
+Dynamic Content: Fetches movie posters and details in real-time from the TMDB API.
+
+Cloud-Hosted Models: All data and model files (.pkl, .csv) are downloaded on the fly from a Hugging Face Dataset repository, making the app lightweight.
+
+⚙️ How It Works
+
+The hybrid logic provides a powerful "best of both worlds" approach:
+
+Select a Movie: The user picks a movie they like (e.g., "Inception").
+
+Content-Based Candidates: The app finds the Top 30 movies that are most similar in content to "Inception" using the similarity.pkl matrix.
+
+Collaborative Re-Ranking: The app then iterates through those 30 candidates and uses the svd_model.pkl to predict a rating for each one (e.g., "A demo user would rate Interstellar 4.8/5").
+
+Calculate Hybrid Score: A final score is computed for each of the 30 movies using a weighted average, controlled by the "Alpha" slider in the UI:
+
+$$\text{Score} = (\text{Similarity} \times \alpha) + (\text{Normalized\_SVD\_Rating} \times (1 - \alpha))$$
+
+Final Recommendation: The app displays the Top 5 movies based on this final hybrid score, complete with their posters and predicted ratings.
+
+🚀 How to Run Locally
+
+1. Clone the Repository
+
+git clone 
+cd your-repo-name
+
+
+2. Create and Activate a Virtual Environment
+
+It's highly recommended to use a virtual environment to manage dependencies.
+
+# For macOS / Linux
+python3 -m venv venv
+source venv/bin/activate
+
+# For Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+
+3. Install Dependencies
+
+The requirements.txt file contains all necessary libraries, including the specific numpy version to prevent compatibility issues.
+
+pip install -r requirements.txt
+
+
+4. Run the Streamlit App
+
+Once dependencies are installed, you can run the app:
+
+streamlit run hybrid_recommender.py
+
+
+The app will open automatically in your browser. On first launch, it will download the model and data files from Hugging Face, which may take a moment.
+
+🗂️ Project File Structure
+
+.
+├── hybrid_recommender.py   # The main Streamlit app script
+├── requirements.txt        # Python dependencies (CRITICAL for deployment)
+├── train_svd.py            # (Optional) The script used to train and create svd_model.pkl
+├── ratings.csv             # (Optional) The raw data used by train_svd.py
+└── README.md               # You are here!
+
+
+Note: The model files (movies.pkl, similarity.pkl, svd_model.pkl, links.csv) are not in the repo, as they are downloaded at runtime from the cloud.
+
+📊 Data & Model Sources
+
+Movie Data (Content): All movie metadata (genres, cast, keywords) and poster links are sourced from The Movie Database (TMDB).
+
+Rating Data (Collaborative): The SVD model was trained on the MovieLens "Latest Small" Dataset, which contains 100,000 ratings.
+
+Model & Data Hosting: All large data files and the trained SVD model are hosted on Hugging Face Datasets.
+
+Content Data: deep9234/movie_recommendation_files
+
+SVD Model: deep9234/sad_model.pkl
+
+Built by Your Name.
 
