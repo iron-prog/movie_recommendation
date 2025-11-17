@@ -4,18 +4,15 @@ A Streamlit web app that provides hybrid movie recommendations, blending Content
 
 🛑 ACTION REQUIRED 🛑
 
-<img width="1440" height="900" alt="Screenshot 2025-11-17 at 4 38 42 PM" src="https://github.com/user-attachments/assets/3bec9c2c-891e-4002-a9f2-aa1d6152435c" />
+<img width="1440" height="900" alt="Screenshot 2025-11-17 at 7 36 38 PM" src="https://github.com/user-attachments/assets/3b4ac7c4-66c9-4f6f-83b7-b78e48a24b61" />
+<img width="1440" height="900" alt="Screenshot 2025-11-17 at 7 36 38 PM 1" src="https://github.com/user-attachments/assets/f7a4b1b4-b864-4dc8-96d0-3545988b72b2" />
 
-<img width="1440" height="900" alt="Screenshot 2025-11-17 at 4 39 26 PM" src="https://github.com/user-attachments/assets/b1ae4953-6aaf-41bf-83f4-d23a8372f855" />
-
-
-Add your Live Demo link!
 
 ``
 
 ▶️ View Live Demo
 
-(Replace the link above with your app's public URL from Streamlit Cloud)
+https://movierecommendation-kp9meuozussz4eermamnnv.streamlit.app
 
 🌟 Core Features
 
@@ -35,9 +32,9 @@ Cloud-Hosted Models: All data and model files (.pkl, .csv) are downloaded on the
 
 The hybrid logic provides a powerful "best of both worlds" approach:
 
-Select a Movie: The user picks a movie they like (e.g., "Inception").
+Select a Movie: The user picks a movie they like (e.g., "Spider Man 3").
 
-Content-Based Candidates: The app finds the Top 30 movies that are most similar in content to "Inception" using the similarity.pkl matrix.
+Content-Based Candidates: The app finds the Top 30 movies that are most similar in content to "Spider Man 3" using the similarity.pkl matrix.
 
 Collaborative Re-Ranking: The app then iterates through those 30 candidates and uses the svd_model.pkl to predict a rating for each one (e.g., "A demo user would rate Interstellar 4.8/5").
 
@@ -108,5 +105,5 @@ Content Data: deep9234/movie_recommendation_files
 
 SVD Model: deep9234/sad_model.pkl
 
-Built by Your Name.
+Built by Your Name. D.T
 
