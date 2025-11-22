@@ -4,9 +4,10 @@ A Streamlit web app that provides hybrid movie recommendations, blending Content
 
 🛑 ACTION REQUIRED 🛑
 
-<img width="1440" height="900" alt="Screenshot 2025-11-17 at 7 36 38 PM" src="https://github.com/user-attachments/assets/3b4ac7c4-66c9-4f6f-83b7-b78e48a24b61" />
-<img width="1440" height="900" alt="Screenshot 2025-11-17 at 7 36 38 PM 1" src="https://github.com/user-attachments/assets/f7a4b1b4-b864-4dc8-96d0-3545988b72b2" />
+<img width="1440" height="900" alt="Screenshot 2025-11-17 at 7 36 14 PM" src="https://github.com/user-attachments/assets/08a3eb5d-49b3-4177-98bc-3452c0ae6bc9" />
 
+
+<img width="1440" height="900" alt="Screenshot 2025-11-17 at 7 36 38 PM" src="https://github.com/user-attachments/assets/3b4ac7c4-66c9-4f6f-83b7-b78e48a24b61" />
 
 ``
 
