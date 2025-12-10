@@ -13,7 +13,7 @@ A Streamlit web app that provides hybrid movie recommendations, blending Content
 
 ▶️ View Live Demo
 
-https://movierecommendation-kp9meuozussz4eermamnnv.streamlit.app # currently unavilable
+https://movierecommendation-rhthwzjde93mwersqsqg93.streamlit.app
 
 🌟 Core Features
 
