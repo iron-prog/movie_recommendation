@@ -85,11 +85,11 @@ The app will open automatically in your browser. On first launch, it will downlo
 🗂️ Project File Structure
 
 .
-├── hybrid_recommender.py   # The main Streamlit app script
-├── requirements.txt        # Python dependencies (CRITICAL for deployment)
-├── train_svd.py            # (Optional) The script used to train and create svd_model.pkl
-├── ratings.csv             # (Optional) The raw data used by train_svd.py
-└── README.md               # You are here!
+├── hybrid_recommender.py   
+├── requirements.txt        
+├── train_svd.py           
+├── ratings.csv            
+└── README.md          
 
 
 Note: The model files (movies.pkl, similarity.pkl, svd_model.pkl, links.csv) are not in the repo, as they are downloaded at runtime from the cloud.
