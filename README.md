@@ -83,8 +83,6 @@ streamlit run hybrid_recommender.py
 The app will open automatically in your browser. On first launch, it will download the model and data files from Hugging Face, which may take a moment.
 
 🗂️ Project File Structure
-
-.
 ├── hybrid_recommender.py   
 ├── requirements.txt        
 ├── train_svd.py           
