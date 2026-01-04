@@ -1,6 +1,6 @@
 import pickle, requests, pandas as pd, time
 
-API_KEY = 'd9a5e1812b867e932d0efd41c90dd95a'
+API_KEY = ''
 movie = pickle.load(open('/Users/deepaktiwari/Downloads/movies.pkl', 'rb'))
 
 def fetch_poster_url(movie_id):
