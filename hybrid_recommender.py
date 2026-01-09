@@ -50,7 +50,7 @@ def download_file_v2(url, destination):
 
 def fetch_poster(movie_id):
     """Fetches movie poster from TMDB API."""
-    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=d9a5e1812b867e932d0efd41c90dd95a&language=en-US"
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=d9a5e1812b867e932d0efd41c90dd95a&language=en-US"#you can use it nothing to worry
     placeholder_image = "https://via.placeholder.com/500x750.png?text=Poster+Not+Found"
     try:
         data = requests.get(url, timeout=3) # Increased timeout
